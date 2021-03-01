@@ -7,7 +7,7 @@ public class Knjiga {
 	private String naslov;
 	private LinkedList<Autor> autori;
 	private String isbn;
-	private String iydavac;
+	private String izdavac;
 	private int izdanje;
 	
 	public String getNaslov() {
@@ -35,11 +35,11 @@ public class Knjiga {
 	}
 	
 	public String getIydavac() {
-		return iydavac;
+		return izdavac;
 	}
 	
 	public void setIydavac(String iydavac) {
-		this.iydavac = iydavac;
+		this.izdavac = iydavac;
 	}
 	
 	public int getIzdanje() {
