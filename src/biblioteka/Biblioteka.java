@@ -28,7 +28,7 @@ public class Biblioteka implements BibliotekaInterfejs{
 	public LinkedList<Knjiga> pronadjiKnjigu(Autor autor, String isbn, String naslov, String izdavac) {
 		LinkedList<Knjiga> rezultat=new LinkedList<>();
 		for(Knjiga knjiga:knjige) {
-			if(knjiga.getNaslov().contains(naslov)
+			if(knjiga.getNaslov().contains(naslov))
 					rezultat.add(knjiga);
 		}
 		return null;
