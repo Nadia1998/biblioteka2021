@@ -36,11 +36,22 @@ class AutorTest {
 		assertEquals("Mika", a.getIme());
 		assertEquals("Mikic", a.getPrezime());
 	}
-
 	@Test
-	final void testGetIme() {
-		fail("Not yet implemented"); // TODO
+	final void testSetIme() {
+		a.setPrezime("Pera");
+		assertEquals("Pera", a.getIme());
 	}
+	@Test
+	@DisplayName("Testiramo ako je uneto null umesto imena")
+	void testSetImeNull() {
+		assertThrows(java.lang.NullPointerException.class,()->a.setIme(null));
+	}
+	@Test
+	void testSetImeKratakString() {
+		
+			assertThrows(java.lang.RuntimeException.class,()->a.setIme("P"));
+		}
+	
 
 	@Test
 	final void testSetPrezime() {
@@ -53,13 +64,7 @@ class AutorTest {
     @Test void setPrezimeKratakString() {
     	assertThrows(java.lang.RuntimeException.class,()->a.setPrezime("P"));
     }
-	@Test
-	final void testGetPrezime() {
-		fail("Not yet implemented"); // TODO
-	}
-
 	
-
 	@Test
 	final void testToString() {
 		a.setIme("Zika");
@@ -89,15 +94,6 @@ class AutorTest {
 
 	}
 
-	@Test
-	@DisplayName("Testiramo ako je uneto null umesto imena")
-	void testSetImeNull() {
-		assertThrows(java.lang.NullPointerException.class,()->a.setIme(null));
-	}
-	void setImeKratakString() {
-		
-			assertThrows(java.lang.RuntimeException.class,()->a.setIme("P"));
-		}
 	
 
 }
