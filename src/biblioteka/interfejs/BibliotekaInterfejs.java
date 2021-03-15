@@ -4,9 +4,16 @@ import java.util.LinkedList;
 
 import biblioteka.Autor;
 import biblioteka.Knjiga;
-
+/**
+ * Interfejs koji implementira biblioteku
+ * @author Nadia
+ *
+ */
 public interface BibliotekaInterfejs {
-	
+	/**
+	 * Dodaje novu knjigu u biblioteku
+	 * @param knjiga Knjiga koja se dodaje
+	 */
 	public void dodajKnjigu(Knjiga knjiga);
 	
 	public void obrisiKnjigu(Knjiga knjiga);
