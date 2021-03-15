@@ -14,86 +14,86 @@ class AutorTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		a=new Autor();
+		a = new Autor();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		a=null;
+		a = null;
 	}
-
 
 	@Test
 	final void testAutor() {
-		a=new Autor();
+		a = new Autor();
 		assertNotNull(a);
 	}
 
 	@Test
 	final void testAutorStringString() {
-		a=new Autor("Mika","Mikic");
+		a = new Autor("Mika", "Mikic");
 		assertNotNull(a);
 		assertEquals("Mika", a.getIme());
 		assertEquals("Mikic", a.getPrezime());
 	}
+
 	@Test
 	final void testSetIme() {
 		a.setPrezime("Pera");
 		assertEquals("Pera", a.getIme());
 	}
+
 	@Test
 	@DisplayName("Testiramo ako je uneto null umesto imena")
 	void testSetImeNull() {
-		assertThrows(java.lang.NullPointerException.class,()->a.setIme(null));
+		assertThrows(java.lang.NullPointerException.class, () -> a.setIme(null));
 	}
+
 	@Test
 	void testSetImeKratakString() {
-		
-			assertThrows(java.lang.RuntimeException.class,()->a.setIme("P"));
-		}
-	
+		assertThrows(java.lang.RuntimeException.class, () -> a.setIme("P"));
+	}
 
 	@Test
 	final void testSetPrezime() {
 		a.setPrezime("Peric");
 		assertEquals("Peric", a.getPrezime());
 	}
-    @Test void testSetPrezimeNull() {
-    	assertThrows(java.lang.NullPointerException.class,()->a.setPrezime(null));
-    }
-    @Test void setPrezimeKratakString() {
-    	assertThrows(java.lang.RuntimeException.class,()->a.setPrezime("P"));
-    }
-	
+
+	@Test
+	void testSetPrezimeNull() {
+		assertThrows(java.lang.NullPointerException.class, () -> a.setPrezime(null));
+	}
+
+	@Test
+	void testSetPrezimeKratakString() {
+		assertThrows(java.lang.RuntimeException.class, () -> a.setPrezime("P"));
+	}
+
 	@Test
 	final void testToString() {
 		a.setIme("Zika");
 		a.setPrezime("Zikic");
-		String s=a.toString();
+		String s = a.toString();
 		assertTrue(s.contains("Zika"));
 		assertTrue(s.contains("Zikic"));
-		
+
 	}
-	@ParameterizedTest 
-	@CsvSource({
-		"Pera, Peric, Pera, Peric, true",
-		"Pera, Zikic, Pera, Peric, false",
-		"Mika, Peric, Pera, Peric, false",
-		"Pera, Peric, Mika, Mikic, false"
-	})
+
+	@ParameterizedTest
+	@CsvSource({ "Pera, Peric, Pera, Peric, true", "Pera, Zikic, Pera, Peric, false", "Mika, Peric, Pera, Peric, false",
+			"Pera, Peric, Mika, Mikic, false" })
+
 	void testEqualsObject(String ime1, String prezime1, String ime2, String prezime2, boolean eq) {
-		
+
 		a.setIme(ime1);
 		a.setPrezime(prezime1);
-		
-		Autor b=new Autor();
+
+		Autor b = new Autor();
 		b.setIme(ime2);
 		b.setPrezime(prezime2);
-		
-	assertEquals(eq, a.equals(b));
+
+		assertEquals(eq, a.equals(b));
 
 	}
-
-	
 
 }
