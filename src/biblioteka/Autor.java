@@ -1,15 +1,31 @@
 package biblioteka;
 
+import javax.management.RuntimeErrorException;
+
 public class Autor {
 	
 	private String ime;
 	private String prezime;
 	
+	public Autor() {
+		super();
+	}
+	Autor(String ime, String prezime){
+		super();
+		setIme(ime);
+		setPrezime(prezime);
+	}
 	public String getIme() {
+		
 		return ime;
 	}
 	
 	public void setIme(String ime) {
+		if(ime==null) {
+			throw new NullPointerException();
+		}
+		if(ime.length()<2)
+			throw new RuntimeException("Ime ne moze biti krace od dva karaktera");
 		this.ime = ime;
 	}
 	
@@ -18,6 +34,13 @@ public class Autor {
 	}
 	
 	public void setPrezime(String prezime) {
+		if(prezime==null) {
+			throw new NullPointerException();
+		}
+			if(prezime.length()<2) {
+				throw new RuntimeException("Prezime ne moze biti krace od 2 karaktera");
+			}
+		
 		this.prezime = prezime;
 	}
 
