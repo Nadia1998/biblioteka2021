@@ -46,7 +46,7 @@ public class Biblioteka implements BibliotekaInterfejs{
 			if(knjiga.getNaslov().contains(naslov))
 					rezultat.add(knjiga);
 		}
-		return null;
+		return rezultat;
 	}
 
 }
