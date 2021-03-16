@@ -38,7 +38,7 @@ class AutorTest {
 
 	@Test
 	final void testSetIme() {
-		a.setPrezime("Pera");
+		a.setIme("Pera");
 		assertEquals("Pera", a.getIme());
 	}
 
