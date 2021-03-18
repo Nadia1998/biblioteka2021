@@ -14,7 +14,7 @@ public class Biblioteka implements BibliotekaInterfejs{
 			throw new NullPointerException("Knjiga ne sme biti null");
 		}
 		if(knjige.contains(knjiga)) {
-			throw new RuntimeException("Knjiga vec postoji");
+			throw new RuntimeException("Knjiga vec postoji.");
 		}
 		knjige.add(knjiga);
 		
@@ -46,7 +46,7 @@ public class Biblioteka implements BibliotekaInterfejs{
 			if(knjiga.getNaslov().contains(naslov))
 					rezultat.add(knjiga);
 		}
-		return null;
+		return rezultat;
 	}
 
 }
