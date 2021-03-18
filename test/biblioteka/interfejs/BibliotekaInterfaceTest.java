@@ -33,7 +33,7 @@ public abstract class BibliotekaInterfaceTest {
 		k2.setIsbn("12345");
 		biblioteka.dodajKnjigu(k);
 		RuntimeException e=assertThrows(java.lang.RuntimeException.class,()->biblioteka.dodajKnjigu(k2));
-		assertEquals("Knjiga vec postoji",e.getMessage());
+		assertEquals("Knjiga vec postoji.",e.getMessage());
 	}
 
 	@Test
