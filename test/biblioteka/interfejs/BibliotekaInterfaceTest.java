@@ -109,4 +109,6 @@ public abstract class BibliotekaInterfaceTest {
 		assertThrows(java.lang.RuntimeException.class, ()->biblioteka.pronadjiKnjigu(null, null, null, null));
 	}
 
+
 }
+
