@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-import biblioteka.interfejs.BibliotekaInterfejsTest;
+import biblioteka.interfejs.BibliotekaInterfaceTest;
 
-class BibliotekaTest extends BibliotekaInterfejsTest {
+class BibliotekaTest extends BibliotekaInterfaceTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
